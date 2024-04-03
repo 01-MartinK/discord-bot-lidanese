@@ -20,12 +20,12 @@ client.login(token)
 .catch((err) => console.log(err));
 
 client.on('guildMemberAdd', (member) => {
-  let role = member.guild.roles.cache.find(role => role.name === "Recruit");
+  let role = member.guild.roles.cache.find(role => role.name === "Black man onboarding");
   if (member.roles.cache.has(role.id)) {
-    console.log("Yay, the author of the message has the role!");
+    console.log(`[${member.id}] Already has role!`);
   }
   else {
-    console.log("No he does not have that role");
+    console.log(`[${member.id}] Doesn't have role! \n [ROLE GIVEN] ${role.name}`);
     member.roles.add(role)
     .catch(console.error());
   }

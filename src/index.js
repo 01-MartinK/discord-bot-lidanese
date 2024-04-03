@@ -4,10 +4,7 @@ const { token } = require('../config.json');
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.MessageContent,
   ]
 });
 
@@ -30,15 +27,3 @@ client.on('guildMemberAdd', (member) => {
     .catch(console.error());
   }
 })
-
-/*
-client.on("messageCreate", async (message) => {
-  if (message.author.bot) return false;
-
-  console.log(message.content);
-
-  if (message.content.includes("?") || message.content.includes("bot")) {
-    message.reply("nuh uh");
-  }
-});
-*/
